@@ -31,7 +31,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.posts.create');
     }
 
     /**
@@ -42,7 +42,14 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $request->validate([
+            'title'=>'required',
+            'slug'=>'required|unique:articles',
+            'content'=>'required',
+
+        ]);
     }
 
     /**
