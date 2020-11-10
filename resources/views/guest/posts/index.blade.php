@@ -8,6 +8,7 @@
             <h2>{{$article->title}}</h2>
             <p>{{$article->content}}</p>
             <a href="{{route('posts.show', $article->slug)}}">Read More</a>
+            {{-- <div>{{$article->user->name}}></div> --}}
         </li>    
     @endforeach
 
